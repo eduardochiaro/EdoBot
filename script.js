@@ -69,7 +69,7 @@ module.exports = new Script({
                     }
                 })
                 */
-                line = response.trim();
+                var line = response.trim();
                 switch (response_type) {
                   default:
                   case 'text':
@@ -78,11 +78,11 @@ module.exports = new Script({
                     });
                     break;
 
-                    case 'photo':
-                      p = p.then(function() {
-                          return bot.sendImage(line);
-                      });
-                      break;
+                  case 'photo':
+                    p = p.then(function() {
+                        return bot.sendImage(line);
+                    });
+                    break;
                 }
 
 
