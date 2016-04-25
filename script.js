@@ -47,10 +47,12 @@ module.exports = new Script({
                     return bot.say(`I didn't understand that.`).then(() => 'speak');
                 }
 
-                var response = scriptRules[upperText];
-                var lines = response.split(/(<img src=\'[^>]*\'\/>)/);
+                var response = scriptRules[upperText]['message'];
+                var response_type = scriptRules[upperText]['type'];
+                //var lines = response.split(/(<img src=\'[^>]*\'\/>)/);
 
                 var p = Promise.resolve();
+                /*
                 _.each(lines, function(line) {
                     line = line.trim();
                     if (!line.startsWith("<")) {
@@ -66,6 +68,23 @@ module.exports = new Script({
                         // });
                     }
                 })
+                */
+                line = response.trim();
+                switch (response_type) {
+                  default:
+                  case 'text':
+                    p = p.then(function() {
+                        return bot.say(line);
+                    });
+                    break;
+
+                    case 'photo':
+                      p = p.then(function() {
+                          return bot.sendImage(line);
+                      });
+                      break;
+                }
+
 
                 return p.then(() => 'speak');
             }
