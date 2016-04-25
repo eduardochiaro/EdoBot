@@ -78,7 +78,7 @@ module.exports = new Script({
                     });
                     break;
 
-                  case 'photo':
+                  case 'image':
                     p = p.then(function() {
                         return bot.sendImage(line);
                     });
