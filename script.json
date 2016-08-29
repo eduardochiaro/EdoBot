@@ -2,7 +2,7 @@
     "HELLO": {"type" : "text", "message": "Hi, I'm EdoBot.  "},
     "TWITTER": {"type" : "text", "message": "Why don't you check out Eduardo on twitter? >> https://twitter.com/eduardochiaro"},
     "I LOVE YOU": {"type" : "text", "message": "Awh, shucks! I love you too!"},
-    "TEST": {"type" : "text", "message": "Message received! Here's a puppy http://bit.ly/1LuIxUh"},
+    "TEST": {"type" : "call", "call": "test", "message": "test call marker"},
     "PHOTO": {"type" : "image", "message": "http://wiki.mafiascum.net/images/0/07/Zoidberghooray.jpg'"},
     "CONNECT ME": {"type" : "text", "message": ""},
     "DISCONNECT": {"type" : "text", "message": "Roger that, EdoBot is back."}

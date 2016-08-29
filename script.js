@@ -72,6 +72,25 @@ module.exports = new Script({
                 var line = response.trim();
                 switch (response_type) {
                   default:
+                  case 'call':
+
+                    var request_call = scriptRules[upperText]['call'];
+
+                    var httpcall = require("https");
+
+                    var options = {
+                      host: 'maker.ifttt.com',
+                      port: 80,
+                      path: '/trigger/' + request_call + '/with/key/d6ylu2gKHAUiSjcX9_1qCw',
+                      method: 'POST'
+                    };
+
+                    req = httpcall.request(options, function(res) {
+                      p = p.then(function() {
+                          return bot.say(line);
+                      });
+                    });
+                    break;
                   case 'text':
                     p = p.then(function() {
                         return bot.say(line);
