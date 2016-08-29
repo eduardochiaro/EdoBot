@@ -85,7 +85,7 @@ module.exports = new Script({
                       method: 'POST'
                     };
 
-                    req = httpcall.request(options, function(res) {
+                    var req = httpcall.request(options, function(res) {
                       p = p.then(function() {
                           return bot.say(line);
                       });
