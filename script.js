@@ -76,7 +76,7 @@ module.exports = new Script({
 
                     var request_call = scriptRules[upperText]['call'];
 
-                    var httpcall = require("https");
+                    var httpcall = require("http");
 
                     var options = {
                       host: 'maker.ifttt.com',
